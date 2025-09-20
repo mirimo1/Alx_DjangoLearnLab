@@ -21,3 +21,8 @@ def edit_book(request, book_id):
 def delete_book(request, book_id):
     # logic to delete a book
     pass
+
+@permission_required('bookshelf.can_view', raise_exception=True)
+def book_list(request):  # ✅ Rename from view_books to book_list
+    books = Book.objects.all()
+    return render(request, 'books/book_list.html', {'books': books})
