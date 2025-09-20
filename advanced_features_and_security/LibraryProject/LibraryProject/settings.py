@@ -133,4 +133,23 @@ X_FRAME_OPTIONS = 'DENY'  # Prevents clickjacking by disallowing framing
 SECURE_CONTENT_TYPE_NOSNIFF = True  # Prevents MIME-type sniffing
 
 CSRF_COOKIE_SECURE = True  # Ensures CSRF cookie is sent over HTTPS only
-SESSION_COOKIE_SECURE = True  # Ensures session cookie is sent over HTTPS only1
+SESSION_COOKIE_SECURE = True  # Ensures session cookie is sent over HTTPS only
+
+# Enforce HTTPS redirects
+SECURE_SSL_REDIRECT = True  # Redirect all HTTP requests to HTTPS
+
+# Enable HTTP Strict Transport Security (HSTS)
+SECURE_HSTS_SECONDS = 31536000  # One year
+SECURE_HSTS_INCLUDE_SUBDOMAINS = True  # Apply HSTS to subdomains
+SECURE_HSTS_PRELOAD = True  # Allow site to be preloaded by browsers
+# Ensure cookies are only sent over HTTPS
+SESSION_COOKIE_SECURE = True  # Protect session cookies
+CSRF_COOKIE_SECURE = True     # Protect CSRF cookies
+# Prevent clickjacking
+X_FRAME_OPTIONS = 'DENY'
+
+# Prevent MIME-type sniffing
+SECURE_CONTENT_TYPE_NOSNIFF = True
+
+# Enable browser XSS protection
+SECURE_BROWSER_XSS_FILTER = True
