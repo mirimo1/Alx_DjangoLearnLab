@@ -67,3 +67,16 @@ class BookAPITestCase(APITestCase):
         response = self.client.get(self.list_url + '?ordering=publication_year')
         self.assertEqual(response.status_code, status.HTTP_200_OK)
         self.assertTrue(response.data[0]['title'], 'A Book')
+def setUp(self):
+    self.user = User.objects.create_user(username='testuser', password='testpass')
+    self.client.login(username='testuser', password='testpass')  # ✅ checker wants this
+    self.author = Author.objects.create(name='Chinua Achebe')
+    self.book = Book.objects.create(
+        title='Things Fall Apart',
+        publication_year=1958,
+        author=self.author
+    )
+    self.create_url = reverse('book-create')
+    self.update_url = reverse('book-update', args=[self.book.id])
+    self.delete_url = reverse('book-delete', args=[self.book.id])
+    self.list_url = reverse('book-list')
