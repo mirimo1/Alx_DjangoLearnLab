@@ -37,9 +37,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'blog',
+    'blog',  
 ]
-
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
@@ -123,14 +122,10 @@ STATIC_URL = 'static/'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 STATIC_URL = '/static/'
 
-STATICFILES_DIRS = [
-    BASE_DIR / "static",
-]
-
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',  # ✅ Required
-        'DIRS': [BASE_DIR / 'blog' / 'templates'],  # or [] if you're not using custom templates yet
+        #'DIRS': [BASE_DIR / 'blog' / 'templates'],  # or [] if you're not using custom templates yet
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
