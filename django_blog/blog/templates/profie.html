@@ -1,5 +1,5 @@
 <form method="post">
   {% csrf_token %}
-  {{ form.as_p }}
-  <button type="submit">Submit</button>
+  <input type="email" name="email" value="{{ user.email }}">
+  <button type="submit">Update</button>
 </form>
