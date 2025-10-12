@@ -1,6 +1,7 @@
 {% load static %}
 <link rel="stylesheet" href="{% static 'css/styles.css' %}">
 <script src="{% static 'js/script.js' %}"></script>
+
 <form method="post">
   {% csrf_token %}
   {{ form.as_p }}
