@@ -16,8 +16,14 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
+from .views import home
 
 urlpatterns = [
+    path('', home),  # This handles the root URL
+    path('admin/', admin.site.urls),
+    path('posts/', include('posts.urls')),
+    path('notifications/', include('notifications.urls')),
+    # Add other apps if needed
     path('api/', include('accounts.urls')),
     path('api/', include('posts.urls')),
     path('notifications/', include('notifications.urls')),
