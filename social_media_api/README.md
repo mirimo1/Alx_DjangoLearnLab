@@ -110,3 +110,16 @@ social_media_api/
 │   ├── settings.py
 │   ├── urls.py
 ```
+### Posts and Comments Endpoints
+
+| Endpoint           | Method | Description                     |
+|--------------------|--------|---------------------------------|
+| `/api/posts/`      | GET    | List all posts (paginated)      |
+| `/api/posts/`      | POST   | Create a new post               |
+| `/api/posts/<id>/` | PUT    | Update a post (owner only)      |
+| `/api/posts/<id>/` | DELETE | Delete a post (owner only)      |
+| `/api/comments/`      | GET    | List all comments               |
+| `/api/comments/`      | POST   | Create a comment on a post      |
+| `/api/comments/<id>/` | PUT    | Update a comment (owner only)   |
+| `/api/comments/<id>/` | DELETE | Delete a comment (owner only)   |
+ Supports pagination and filtering by title/content.
